@@ -5,9 +5,8 @@ import {
   Routes,
   Route,
   Outlet,
-  useNavigate,
-  useLocation,
-  useParams,
+  useNavigate
+  
 } from "react-router-dom";
 
 function Navigation() {
@@ -54,8 +53,6 @@ export function Home() {
     <div>
       <h1 className="home">Welcome to my Home Page </h1>
 
-   
-     
       <Navigation />
     </div>
   );
@@ -190,7 +187,7 @@ export function Users() {
   );
 }
 
-function Myout() {
+function FirstNestedRoute() {
 
   return (
     <div>
@@ -199,7 +196,7 @@ function Myout() {
   );
 }
 
-function Another() {
+function SecondNestedRoute() {
   return (
     <div>
       <p className="nested_p">This is the Second Nested Route</p>
@@ -215,14 +212,16 @@ function Another() {
 const Notfound = () => {
   return (
     <div>
-      <p style={{ color: "red", fontSize: "20px" }}>
+      <p style={{ color: "red", fontSize: "30px" }}>
         {" "}
         error 404 page Not found
       </p>
+
+       <Navigation />
     </div>
   );
 };
-function Rout() {
+function AllRoute() {
   return (
     <>
     
@@ -232,8 +231,8 @@ function Rout() {
 
         </Route>
         <Route path="/About" element={<About />}>
-          <Route path="nested1" element={<Myout />} />
-          <Route path="nested2" element={<Another />} />
+          <Route path="nested1" element={<FirstNestedRoute />} />
+          <Route path="nested2" element={<SecondNestedRoute />} />
         </Route>
         <Route path="*" element={<Notfound />} />
       </Routes>
@@ -241,4 +240,4 @@ function Rout() {
   );
 }
 
-export default Rout;
+export default AllRoute;

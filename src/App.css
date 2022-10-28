@@ -54,3 +54,12 @@ border:none;
 border-radius:5px;
 font-size:22x;
 }
+.home{
+  margin:30 0pxpx;
+  padding:25px 0px;
+  background:#FFF7E9;
+  color:black;
+}
+.navigation{
+  padding:20px;
+}
